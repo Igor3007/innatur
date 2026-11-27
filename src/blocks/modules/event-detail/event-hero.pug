@@ -1,0 +1,25 @@
+include ../../../views/helpers/mixins.pug
+
+mixin event-hero(data)
+    section.event-hero
+        .container
+            .event-hero__card
+                .event-hero__media
+                    .event-hero__video-preview
+                        +picture(data.videoPreview)
+                        a(data-fslightbox="video" href=data.videoSrc)
+                            button.event-hero__play(type="button" aria-label="Смотреть видео" )
+                                +icon('ic_icon-play', 24)
+                .event-hero__content
+                    .event-hero__meta
+                        .event-hero__meta-item
+                            +icon('ic_marker', 20)
+                            span= data.country
+                        .event-hero__meta-item
+                            +icon('ic_calendar', 20)
+                            span= data.date
+                    h1.event-hero__title= data.title
+                    p.event-hero__desc= data.description
+                    .event-hero__action
+                        div.btn__green(data-modal="/parts/_popup-request.html")
+                            span Запросить участие

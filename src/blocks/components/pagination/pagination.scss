@@ -1,0 +1,165 @@
+@use "../../../styles/vars";
+@use "../../../styles/helpers/functions";
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 16px;
+    @media screen and (min-width: vars.$w1024) {
+        padding-top: 32px;
+    }
+    .btn__white {
+        height: 52px;
+    }
+
+    @media screen and (max-width: vars.$w480) {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    &>a{
+        width: 100%;
+        //@media screen and (min-width: vars.$w1024) {
+        //    width: calc(100% / 3 - 8px);
+        //}
+        //.btn{
+        //    width: 100%;
+        //    svg{
+        //        width: 16px;
+        //        height: 16px;
+        //        transform: rotate(-90deg);
+        //    }
+        //}
+    }
+
+    &__page {
+        display: none;
+        gap: 4px;
+        padding: 6px;
+        border: 2px solid var(--border-01);
+        border-radius: 20px;
+        @media screen and (min-width: vars.$w1024) {
+            display: flex;
+        }
+        li {
+            background: var(--white);
+            color: var(--accent-02);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            height: 40px;
+            a{
+                transition: 0.3s ease;
+                color: var(--accent-02);
+            }
+            @include vars.hover {
+                background: var(--bg-02);
+                color: var(--accent-03);
+                a{
+                    color: var(--accent-03);
+                }
+            }
+            &:has(span) {
+                pointer-events: none;
+            }
+
+            &.active {
+                background: var(--accent-03);
+                color: var(--accent-01);
+                a{
+                    color: var(--accent-01);
+                }
+                pointer-events: none;
+            }
+
+            &.control {
+                background: var(--accent-21);
+                border-color: var(--accent-21);
+                color: var(--white);
+                @include vars.hover {
+                    background: var(--accent-11);
+                    border-color: var(--accent-11);
+                }
+                &.disabled {
+                    background: transparent;
+                    border-color: var(--text-3);
+                    color: var(--text-3);
+                    pointer-events: none;
+                }
+            }
+        }
+
+        a, span {
+            display: flex;
+            width:  40px;
+            height:  40px;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+            font: 600 16px/24px var(--font-wix);
+            letter-spacing: .02em;
+        }
+    }
+
+    &__page.compact {
+        span,
+        a {
+            height: 42px;
+        }
+    }
+
+    &__more {
+
+        width: 100%;
+
+        @media screen and (max-width: vars.$w480) {
+            padding-bottom: 24px;
+
+        }
+
+        & .btn {
+            width: 100%;
+            //background-color: var(--accent);
+            //color: #fff;
+            //margin: 0 auto;
+            //max-width: 275px;
+            //font-family: var(--font-montserrat);
+            //font-size: 17px;
+            //
+            //letter-spacing: -3%;
+            //
+            //@media screen and (min-width: vars.$w992) {
+            //    max-width: 500px;
+            //}
+            //
+            //@include vars.hover {
+            //    background-color: var(--bg);
+            //    color: var(--accent);
+            //}
+
+        }
+    }
+
+    &--showmore {
+        & .pagination {
+            &__page {
+                width: auto;
+            }
+        }
+    }
+
+    &__total {
+        color: #000;
+        white-space: nowrap;
+
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.card-review__project * {
+    margin: 0;
+}

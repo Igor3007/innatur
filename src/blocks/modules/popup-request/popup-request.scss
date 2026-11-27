@@ -1,0 +1,88 @@
+@use "../../../styles/vars" as vars;
+
+.popup-request {
+    // Модификатор ширины .w640 уже задан в базовых стилях попапа.
+    // Здесь — только специфика этой модалки.
+
+    .popup-form__wrp {
+        position: relative;
+    }
+
+    .popup-form__close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+
+        svg {
+            fill: var(--text-3);
+            transition: fill 0.3s ease;
+        }
+
+        @include vars.hover {
+            &:hover {
+                background: var(--bg-01);
+
+                svg {
+                    fill: var(--text-1);
+                }
+            }
+        }
+    }
+
+    .popup-form__title {
+        @include vars.font-h3;
+        color: var(--text-1);
+        margin: 0 0 8px;
+        padding-right: 40px; // чтобы не наезжало на крестик
+    }
+
+    .popup-form__subtitle {
+        @include vars.font-15;
+        color: var(--text-2);
+        margin: 0 0 20px;
+
+        @include vars.from('md') {
+            @include vars.font-16;
+            margin-bottom: 24px;
+        }
+    }
+
+
+
+
+}
+
+.popup-request {
+    & .popup-form {
+    &__form {
+        & .form {
+            &__note {
+                margin-top: 12px;
+                & * {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: var(--text-2);
+                }
+
+                & a {
+                    &:hover {
+                        color: var(--accent-01);
+                    }
+                }
+            }
+        }
+    }
+}
+
+}
+

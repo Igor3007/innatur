@@ -1,0 +1,177 @@
+@use "../../../styles/vars" as vars;
+
+.infoBlock{
+    padding: 22px 0;
+    @media screen and (min-width: vars.$w760) {
+        padding: 52px 0;
+    }
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        &_history{
+            background: var(--bg-01);
+            padding: 18px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 12px;
+            width: 100%;
+            @media screen and (min-width: vars.$w760) {
+                padding: 32px;
+                gap: 16px;
+            }
+            @media screen and (min-width: vars.$w1200) {
+                width: calc((100% / 3) - 16px);
+            }
+            &-title{
+                @include vars.font-h2;
+                padding-bottom: 6px;
+                @media screen and (min-width: vars.$w760) {
+                    padding-bottom: 20px;
+                }
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                li{
+                    position: relative;
+                    padding-left: 15px;
+                    @include vars.font-14;
+                    font-weight: 400!important;
+                    @media screen and (min-width: vars.$w760) {
+                        padding-left: 19px;
+                        @include vars.font-16;
+                        &:after{
+                            top: 9px;
+                        }
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 5px;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 6px;
+                        background: var(--accent-02);
+                    }
+                }
+            }
+            .btn__green{
+                font-weight: 600;
+            }
+        }
+        &_info{
+            width: 100%;
+            @media screen and (min-width: vars.$w1200) {
+                width: calc(((100% / 3) * 2) - 8px);
+            }
+            &-title{
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 120%;
+
+                padding-bottom: 12px;
+                @media screen and (min-width: vars.$w760) {
+                    padding-bottom: 24px;
+                    @include vars.font-h3;
+                }
+            }
+            &-items{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                .item{
+                    background: var(--bg-01);
+                    padding: 12px 46px 12px 12px;
+                    border-radius: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4px;
+                    width: 100%;
+                    position: relative;
+                    @media screen and (min-width: vars.$w760) {
+                        gap: 8px;
+                        padding: 24px 66px 24px 24px;
+                        &:hover{
+                            background: var(--bg-02);
+                            padding: 24px 66px 24px 28px;
+                            .item__text{
+                                color: var(--text-1);
+                            }
+                            .item__icon{
+                                background: #FFFFFF;
+                                z-index: 1;
+                                transition: all 0.3s ease;
+                                padding-left: 14px;
+                                svg{
+                                    transform: rotate(0);
+                                    path{
+                                        stroke: var(--accent-02);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &__title{
+                        font-size: 15px;
+                        color: var(--text-1);
+                        font-weight: 700;
+                        position: relative;
+                        z-index: 1;
+                        transition: all 0.3s ease;
+                        @media screen and (min-width: vars.$w760) {
+                            font-size: 20px;
+                        }
+                    }
+                    &__text{
+                        @include vars.font-12;
+                        font-weight: 400;
+                        color: var(--text-2);
+                        position: relative;
+                        z-index: 1;
+                        transition: all 0.3s ease;
+                        @media screen and (min-width: vars.$w760) {
+                            @include vars.font-15;
+                        }
+                    }
+                    &__icon{
+                        width: 52px;
+                        height: 52px;
+                        position: absolute;
+                        right: -14px;
+                        transform: translateY(-50%) scale(.85);
+                        top: 50%;
+                        border-radius: 24px 0 0 24px;
+                        z-index: 1;
+                        transition: all 0.3s ease;
+                        display: flex;
+                        align-items: center;
+                        //justify-content: center;
+                        padding-left: 0;
+                        @media screen and (min-width: vars.$w760) {
+                            right: 0;
+                            transform: translateY(-50%) scale(1);
+                            svg{
+                                transition: all 0.3s ease;
+                                transform: rotate(-45deg);
+                                path{
+                                    transition: all 0.3s ease;
+                                    stroke: var(--text-1);
+                                }
+                            }
+                        }
+                        svg{
+                            path{
+                                stroke: var(--text-1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

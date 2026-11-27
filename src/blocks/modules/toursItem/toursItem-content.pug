@@ -1,0 +1,28 @@
+include ../toursItem/toursItemPhoto
+include ../toursItem/toursContentInfoTop
+include ../toursItem/toursContentInfoDescription
+include ../toursItem/toursContentInfoProgramm
+include ../toursItem/toursContentInfoMaps
+include ../toursItem/toursContentInfoLife
+include ../toursItem/toursContentInfoSteps
+include ../toursItem/toursContentInfoFAQ
+include ../toursItem/toursContentDetailsBox
+
+mixin toursItem-content
+    .toursItem
+        .container
+            .toursItem__content
+                .toursItem__content_photo
+                    +toursItemPhoto
+                .toursItem__content_details
+                    +toursContentDetailsBox
+                .toursItem__content_info
+                    +toursContentInfoTop
+                    .toursItem__content_info-content
+                        +toursContentInfoDescription
+                        +toursContentInfoProgramm
+                        +toursContentInfoMaps
+                        +toursContentInfoLife
+                        +toursContentInfoSteps
+                        +toursContentInfoFAQ
+

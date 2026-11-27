@@ -1,0 +1,20 @@
+include ../../../views/helpers/mixins.pug
+
+//- универсальная белая плашка:
+//-   +event-section({ title, content })
+//-   +event-section({ title, items: [...] })  — с маркированным списком
+//-   +event-section({ title })                — только заголовок
+
+mixin event-section(data)
+    section.event-section
+        .container
+            .event-section__card
+                if data.title
+                    h2.event-section__title= data.title
+                if data.content
+                    p.event-section__content= data.content
+                if data.items && data.items.length
+                    .formated-text
+                        ul
+                            each item in data.items
+                                li= item

@@ -1,0 +1,75 @@
+mixin toursContentDetailsBox
+    .toursContentDetailsBox
+        .toursContentDetailsBox__title Детали тура
+        .toursContentDetailsBox__detailsTour
+            .item
+                .item__title Продолжительность
+                .item__info: span 9 дней / 8 ночей
+            .item
+                .item__title Вид отдыха
+                .item__info: span Приключение
+            .item
+                .item__title Сложность
+                .item__info_level
+                    span Средняя
+                    ul
+                        li.active
+                        li.active
+                        li
+                    .tooltips
+                        .tooltips__icon ?
+                        .tooltips__text
+                            p Для того чтобы исполнить мечту увидеть китов, предстоит проделать долгий путь.
+                            p Труднодоступность и суровый климат Шантар как будто специально не подпускают к этим местам человека
+            .item
+                .item__title Возрастные ограничения
+                .item__info: span от 10 лет
+            .item
+                .item__title Формат размещения
+                .item__info
+                    span 1 день в гостинице
+                    span 4 дня в палатке
+                    span 3 дня на турбазе
+        .toursContentDetailsBox__title Детали заезда
+        .toursContentDetailsBox__detailsBook
+            form(action='#' method='POST')
+                .form
+                    .form__items
+                        .form__items_info Количество человек:
+                        .form__counts
+                            .count__down
+                                +icon('ic-minus-dark', 16)
+                            input(type="number" maxlength="5" name="" value="0" placeholder="")
+                            .count__up
+                                +icon('ic-plus-dark', 16)
+                    .form__calendar
+                        input#calendarTours(
+                            type="text",
+                            placeholder="Выберите желаемую дату",
+                            readonly
+                        )
+                    .form__calendarDates
+                        label Ближайшая дата заезда:
+                        input(
+                            type="text",
+                            placeholder="Ближайшая дата заезда:",
+                            value="22.08 — 30.08.2026"
+                            readonly
+                        )
+                        .btn__greenLight(data-modal="/parts/_popup-dates.html") Смотреть другие даты
+
+                    .form__price
+                        .form__price_box
+                            .now.red от 172 800 ₽
+                            .old от 205 000 ₽
+                        p за 1 человека
+                    .form__buttons
+                        .btn__green(data-modal="/parts/_popup-book.html") Отправить заявку
+                        .btn__greenLight Задать вопрос
+    .toursContentDetailsBoxMob
+        .form__price
+            .form__price_box
+                .now.red от 172 800 ₽
+                .old от 205 000 ₽
+        .form__buttons
+            .btn__green(data-modal="/parts/_popup-book.html") Отправить заявку

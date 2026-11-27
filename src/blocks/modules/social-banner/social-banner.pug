@@ -1,0 +1,27 @@
+mixin social-banner
+    .social-banner
+        .container
+            .social-banner__item
+                .social-banner__item_content
+                    .social-banner__item_content-title Подключитесь к ленте горящих туров
+                    .social-banner__item_content-text в удобном вам мессенджере
+                .social-banner__item_btn
+                    a(href='#').btn__white
+                        i: +bgimage('/img/icons/type=telegram.png')
+                        span Телеграм
+                    a(href='#').btn__white
+                        i: +bgimage('/img/icons/type=max.png')
+                        span Макс
+
+mixin social-banner-event
+    .social-banner.social-banner-event
+        .container
+            .social-banner__item
+                .social-banner__item_content
+                    .social-banner__item_content-title Появились вопросы или нужна помощь с подбором?
+                    .social-banner__item_content-text Оставьте заявку или напишите нам в Telegram
+                .social-banner__item_btn
+                    a(href='#').btn__green
+                        span Оставить заявку
+                    a(href='https://t.me/').btn__white
+                        span Связаться в Телеграм

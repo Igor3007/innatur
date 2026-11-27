@@ -1,0 +1,29 @@
+extends ../layouts/page
+
+block variables
+    include ../../data/data.pug
+    - const title = "INNA"
+
+
+block main
+
+    include ../../blocks/modules/categoryPage/category-banner/category-banner
+    include ../../blocks/modules/categoryPage/category-content/category-content
+    include ../../blocks/components/messenger/messenger
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+    .container
+        h1 Авторские туры
+        +breadcrumbs([
+            {title: 'Все туры', href: '/'},
+            {title: 'Авторские туры'},
+        ])
+
+    +category-content
+    +category-banner
+    +messenger
+
+
+
+block scripts
+    script(src="/js/index.js")

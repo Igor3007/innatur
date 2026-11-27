@@ -1,0 +1,46 @@
+include ../../../views/helpers/mixins.pug
+
+mixin popup-request(data)
+    .popup-form.popup-request.w640
+        .popup-form__wrp
+            .popup-form__title= data.title || 'Запросить участие'
+
+            if data.subtitle
+                .popup-form__subtitle= data.subtitle
+
+            .popup-form__form
+                form(action="/action.php" method="post" data-request-form)
+                    input(type="hidden" name="action" value="request-participation")
+                    if data.eventId
+                        input(type="hidden" name="event_id" value=data.eventId)
+
+                    .form
+                        .form__item
+                            .form__subitem
+                                input(type="text" maxlength="25" name="name" required placeholder="Имя")
+
+                        .form__item
+                            .form__subitem
+                                input(type="text" maxlength="25" data-maska="+7(###)###-##-##" name="phone" required placeholder="Номер телефона")
+
+                        .form__item
+                            .form__subitem
+                                input(type="email" maxlength="90" name="email" placeholder="E-mail (необязательно)")
+
+                        .form__item
+                            .form__subitem
+                                input(type="text" maxlength="40" name="time" placeholder="Удобное время связи")
+
+                        .form__item
+                            .form__subitem
+                                textarea(name="comment" maxlength="500" placeholder="Комментарий (необязательно)")
+
+                        .form__item
+                            .form__subitem.form__subitem--submit
+                                button.btn__green(type="submit")
+                                    span Отправить
+
+                        .form__item
+                            .form__subitem
+                                .form__note
+                                    +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>', 'policy', {required: true})

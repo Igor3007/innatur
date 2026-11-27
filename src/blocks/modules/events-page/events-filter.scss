@@ -1,0 +1,79 @@
+@use "../../../styles/vars" as vars;
+
+.events-filter {
+    margin-inline: var(--container-out);
+    padding-inline: var(--container-padding);
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @include vars.from('md') {
+        margin-inline: 0;
+        padding-inline: 0;
+        overflow: visible;
+    }
+
+    @include vars.before('sm') {
+        padding: 0;
+    }
+
+
+    &__list {
+        display: flex;
+        gap: 8px;
+        width: max-content;
+        padding: 8px;
+        background-color: #fff;
+
+
+        @include vars.from('md') {
+            width: auto;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        @include vars.before('sm') {
+            padding-inline: 16px;
+        }
+        @include vars.from('sm') {
+            border-radius: 8px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        background: var(--white);
+        border: 1px solid #E6E7EB;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        @include vars.font-14;
+        color: var(--text-1);
+
+        @include vars.from('md') {
+            padding: 10px 24px;
+            border-radius: 8px;
+            @include vars.font-15;
+        }
+
+
+        &:hover {
+            border-color: #CDCED1;
+
+        }
+
+
+        &.active {
+            border-color: var(--accent-01);
+        }
+    }
+}

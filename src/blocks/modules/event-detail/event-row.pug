@@ -1,0 +1,28 @@
+include ../../../views/helpers/mixins.pug
+
+mixin event-row(data)
+    section.event-row(class=(data.reverse ? 'event-row--reverse' : ''))
+        .container
+            .event-row__card
+                .event-row__content
+                    if data.country || data.date
+                        .event-row__meta
+                            if data.country
+                                .event-row__meta-item
+                                    +icon('ic_marker', 20)
+                                    span= data.country
+                            if data.date
+                                .event-row__meta-item
+                                    +icon('ic_calendar', 20)
+                                    span= data.date
+                    if data.title
+                        h2.event-row__title= data.title
+                    if data.description
+                        p.event-row__desc= data.description
+                    if data.cta
+                        .event-row__action
+                            div.btn__green(data-modal="/parts/_popup-request.html")
+                                span= data.cta.label
+                if data.image
+                    .event-row__media
+                        +picture(data.image)

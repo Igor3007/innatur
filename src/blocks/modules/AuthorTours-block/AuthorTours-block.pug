@@ -1,0 +1,111 @@
+mixin list(data)
+    a(href=data.href).item
+        .item__img: +picture(data.img)
+        .item__title= data.title
+        .item__icon: <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L17 9L9 17M17 9L1 9" stroke="#75AD1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        .item__lists
+            ul
+                each item in data.list
+                    li= item
+
+mixin AuthorTours-block
+    section.AuthorToursBlock
+        .container
+            .AuthorToursBlock__title Авторские туры
+            .AuthorToursBlock__content
+                +list({
+                    href: '/',
+                    img: '/img/AuthorTours/1',
+                    title: 'Выгодные предложения месяца',
+                    list: [
+                        'Наша история',
+                        'О нас',
+                        'Команда',
+                        'Способы оплаты',
+                        'Контакты',
+                    ],
+                })
+                +list({
+                    href: '/',
+                    img: '/img/AuthorTours/2',
+                    title: 'Выгодные предложения месяца',
+                    list: [
+                        'Наша история',
+                        'О нас',
+                        'Команда',
+                        'Способы оплаты',
+                        'Контакты',
+                    ],
+                })
+                +list({
+                    href: '/',
+                    img: '/img/AuthorTours/3',
+                    title: 'Выгодные предложения месяца',
+                    list: [
+                        'Наша история',
+                        'О нас',
+                        'Команда',
+                        'Способы оплаты',
+                        'Контакты',
+                    ],
+                })
+                .itemSpecial
+                    .itemSpecial__top
+                        .itemSpecial__title Подберём тур специально для вас
+                        .itemSpecial__text Наши менеджеры бесплатно помогут вам определиться с туром и подберут лучшие варианты для вашего отдыха!
+                    .btn__green(data-modal="/parts/_popup-searchTours.html") Подобрать тур
+
+                +list({
+                    href: '/',
+                    img: '/img/AuthorTours/4',
+                    title: 'Выгодные предложения месяца',
+                    list: [
+                        'Наша история',
+                        'О нас',
+                        'Команда',
+                        'Способы оплаты',
+                        'Контакты',
+                    ],
+                })
+                +list({
+                    href: '/',
+                    img: '/img/AuthorTours/5',
+                    title: 'Выгодные предложения месяца',
+                    list: [
+                        'Наша история',
+                        'О нас',
+                        'Команда',
+                        'Способы оплаты',
+                        'Контакты',
+                    ],
+                })
+                +list({
+                    href: '/',
+                    img: '/img/AuthorTours/6',
+                    title: 'Выгодные предложения месяца',
+                    list: [
+                        'Наша история',
+                        'О нас',
+                        'Команда',
+                        'Способы оплаты',
+                        'Контакты',
+                    ],
+                })
+                +list({
+                    href: '/',
+                    img: '/img/AuthorTours/7',
+                    title: 'Выгодные предложения месяца',
+                    list: [
+                        'Наша история',
+                        'О нас',
+                        'Команда',
+                        'Способы оплаты',
+                        'Контакты',
+                    ],
+                })
+                .btn__all
+                    span Все авторские туры
+                    i: +bgimage('/img/svg/ic_arr-right.svg')
+
+
+

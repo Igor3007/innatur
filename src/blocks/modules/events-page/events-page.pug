@@ -1,0 +1,29 @@
+include ../../components/breadcrumbs/breadcrumbs
+include ./event-card
+include ./events-filter
+
+mixin events-page
+    section.section-events-page
+        .container
+            .events-page
+                +breadcrumbs([
+                    { title: 'События' },
+                ])
+
+                h1.events-page__title События ИННА ТУР
+
+                +events-filter(eventsFilters)
+
+                .events-page__grid(data-events-grid)
+                    each item in events
+                        +event-card(item)
+
+                .events-page__more
+                    button.btn__all(
+                        type="button"
+                        data-load-more
+                        data-endpoint="/parts/_cards-events.html"
+                        data-page="1"
+                        data-per-page="10"
+                    )
+                        span Показать ещё

@@ -1,0 +1,38 @@
+extends layouts/main
+
+block variables
+    include ../data/data.pug
+    - const title = "INNA"
+
+
+block main
+
+
+    include ../blocks/modules/first-block/first-block
+    include ../blocks/modules/history-block/history-block
+    include ../blocks/modules/burning-block/burning-block
+    include ../blocks/modules/special-block/special-block
+    include ../blocks/modules/minPrice-block/minPrice-block
+    include ../blocks/modules/AuthorTours-block/AuthorTours-block
+    include ../blocks/modules/info-block/info-block
+    include ../blocks/modules/about-block/about-block
+    include ../blocks/modules/social-banner/social-banner
+    include ../blocks/components/messenger/messenger
+
+
+    +first-block
+    +history-block
+    +burning-block
+    +special-block
+    +minPrice-block
+    +social-banner
+    +AuthorTours-block
+    +info-block
+    +about-block
+
+    +messenger
+
+
+
+block scripts
+    script(src="/js/index.js")

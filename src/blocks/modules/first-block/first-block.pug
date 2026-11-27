@@ -1,0 +1,27 @@
+mixin first-block
+    section.sectionFirstBlock
+        .sectionFirstBlock__img: +picture('/img/first/bg-first-block')
+        .container
+            .sectionFirstBlock__top
+                .sectionFirstBlock__top_img: +picture('/img/first/bg-first-block-mob')
+                .sectionFirstBlock__title Доверьте свой отдых профессионалам
+                .sectionFirstBlock__box
+                    .sectionFirstBlock__box_title 34 года
+                    .sectionFirstBlock__box_text работаем для вас
+
+
+            .sectionFirstBlock__info
+                .sectionFirstBlock__info_tab
+                    ul(data-tab-group="main")
+                        li(data-tab="0", class="active") Туры
+                        li(data-tab="1") Горящие туры
+                        li(data-tab="2") Отели
+                        li(data-tab="3") Авибилеты
+                        a(href='/') Авторские туры
+                        a(href='/') Визы
+
+                .sectionFirstBlock__info_search
+                    .tab-content(data-content="0", class="active") search 1
+                    .tab-content(data-content="1") search 2
+                    .tab-content(data-content="2") search 3
+                    .tab-content(data-content="3") search 4

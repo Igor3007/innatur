@@ -1,0 +1,27 @@
+mixin minicard(data)
+    a(href=data.link).minicard
+        .minicard__image: +picture(data.image)
+        .minicard__main
+            .minicard__main_top
+                //.minicard__main_rating(style=`background: ${data.ratingBg || '#75AD1F'};`)
+                //    +icon('ic_star', '11')
+                //    span= data.rating
+                .minicard__main_city
+                    +icon('ic_city')
+                    span= data.city
+            .minicard__name= data.title
+            .minicard__main_info
+                if data.props
+                    ul
+                        each prop in data.props
+                            li
+                                span= prop.label
+            .minicard__price
+                .minicard__price-current= data.priceCurrent
+                if data.priceOld
+                    .minicard__price-old= data.priceOld
+                if data.sale
+                    .minicard__main_sale
+                        +icon('ic_hot_tour', '10')
+                        span= data.sale
+

@@ -1,0 +1,26 @@
+-
+    const imagesTours = [
+        '/img/tours/tours1.png',
+        '/img/tours/tours2.png',
+        '/img/tours/tours3.png',
+        '/img/tours/tours1.png',
+        '/img/tours/tours3.png',
+    ]
+
+
+mixin toursItemPhoto
+ .toursItemPhoto
+     each url in imagesTours
+         a.tours-galery__img(href=url, data-fslightbox="examples")
+             picture
+                 img(src=url, alt="examples")
+ .toursItemPhotoSlider
+     .splide(data-slider="toursSlider")
+         .splide__track
+             .splide__list
+                 each url in imagesTours
+                    .splide__slide
+                        picture
+                            img(src=url, alt="examples")
+
+

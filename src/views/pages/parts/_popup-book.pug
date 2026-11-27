@@ -1,0 +1,68 @@
+include ../../helpers/mixins.pug
+
+.popup-form.w640
+    .popup-form__wrp
+        .popup-form__title Заявка на бронирование
+        .popup-form__steps
+            ul
+                li: span Байкальский лед: аэроходы и экскурсия на КБЖД
+                li: span 9 дней / 8 ночей
+                li: span 22.09 — 30.09.2026
+        .popup-form__form
+            form(action="/action.php")
+                .form
+                    .form__item
+                        .form__subitem
+                            //label Имя
+                            input(type="text" maxlength="25" name="" required placeholder="Имя")
+                    .form__item
+                        .form__subitem
+                            //label Номер телефона:
+                            input(type="text" maxlength="25" data-maska="+7(###)###-##-##" name="" required placeholder="Номер телефона")
+                    .form__item
+                        .form__subitem
+                            //label E-mail (необязательно)
+                            input(type="email" maxlength="90" placeholder="E-mail (необязательно)")
+                    .form__item
+                        .form__subitem
+                            .contentSort
+                                .contentSort__title Предпочитаемый способ связи
+                                .contentSort__select
+                                    ul
+                                        li.active(data-value="Неважно") Неважно
+                                        li(data-value="Телефон") Телефон
+                                        li(data-value="Email") Email
+
+                    .form__item
+                        .form__subitem
+                            .contentSort
+                                .contentSort__title Количество человек
+                                .contentSort__select
+                                    ul
+                                        li.active(data-value="1") 1
+                                        li(data-value="2") 2
+                                        li(data-value="3") 3
+                                        li(data-value="4") 4
+                                        li(data-value="5") 5
+                                        li(data-value="6") 6
+                                        li(data-value="7") 7
+                                        li(data-value="8") 8
+                                        li(data-value="9") 9
+                                        li(data-value="10") 10
+                    .form__item
+                        .form__subitem
+                            //label Комментарий (необязательно)
+                            textarea(name="" maxlength="500" placeholder="Комментарий (необязательно)")
+
+                    .form__item
+                        .boxPrice: span от 172 800 ₽ за человека
+                    .form__item
+                        .form__subitem.form__subitem--submit
+                            button.btn__green(type="submit")
+                                span Отправить
+
+                    .form__item
+                        .form__subitem
+                            .form__note
+                                +checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>', 'policy', {required: true})
+

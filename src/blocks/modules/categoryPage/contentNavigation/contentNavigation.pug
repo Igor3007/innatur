@@ -1,0 +1,193 @@
+
+mixin navigation-menu
+    form.contentNavigation__menu
+        .contentNavigation__menu_item
+            .contentNavigation__menu_item-title
+                span Дата путешествия
+                +icon('ic_arrow-down')
+            .contentNavigation__menu_item-content
+                .filter__date
+                    .filter__date_calendar
+                        input#calendar(
+                            type="text",
+                            placeholder="Выберите дату",
+                            readonly
+                        )
+                    .filter__date_range
+                        .contentSort
+                            //.contentSort__title Сортировка
+                            .contentSort__select
+                                ul
+                                    li.active(data-value="10") ±10 дней
+                                    li(data-value="15") ±15 дней
+                                    li(data-value="20") ±20 дней
+                                    li(data-value="25") ±25 дней
+                                    li(data-value="30") ±30 дней
+        .contentNavigation__menu_item
+            .contentNavigation__menu_item-title
+                span Длительность
+                +icon('ic_arrow-down')
+            .contentNavigation__menu_item-content
+                .filter-properties
+                    .filter-properties__list
+                        .filter-properties__range
+                            .filter-properties__row
+                                .filter-properties__input
+                                    span От (дней)
+                                    input(type="text", name="filter[days][min]", placeholder, value="1", data-day-range="min", aria-label)
+                                .filter-properties__input
+                                    span До (дней)
+                                    input(type="text", name="filter[days][max]", placeholder, value="16", data-day-range="max", aria-label)
+                            .filter-properties__slider
+                                .slider#day-slider(se-min="1", se-step="1", se-min-value="1", se-max-value="16", se-max="16")
+                                    .slider-touch-left
+                                        span
+                                    .slider-touch-right
+                                        span
+                                    .slider-line
+                                        span
+        .contentNavigation__menu_item
+            .contentNavigation__menu_item-title
+                span Бюджет
+                +icon('ic_arrow-down')
+            .contentNavigation__menu_item-content
+                .filter-properties
+                    .filter-properties__list
+                        .filter-properties__range
+                            .filter-properties__row
+                                .filter-properties__input
+                                    span От
+                                    input(type="text", name="filter[price][min]", placeholder, value="62000", data-price-range="min", aria-label)
+                                .filter-properties__input
+                                    span До
+                                    input(type="text", name="filter[price][max]", placeholder, value="9350000", data-price-range="max", aria-label)
+                            .filter-properties__slider
+                                .slider#price-slider(se-min="62000", se-step="1000", se-min-value="62000", se-max-value="9350000", se-max="9350000")
+                                    .slider-touch-left
+                                        span
+                                    .slider-touch-right
+                                        span
+                                    .slider-line
+                                        span
+
+
+        .contentNavigation__menu_item
+            .contentNavigation__menu_item-title
+                span Сезоны и месяцы
+                +icon('ic_arrow-down')
+            .contentNavigation__menu_item-content
+                .filter-properties
+                    .filter-properties__list(data-filter="seasons")
+                        ul
+                            li
+                                label.checkbox
+                                    input#form_square(type="checkbox", name="filter[seasons][]", value="Весна")
+                                    span.checkbox__elem
+                                    span.checkbox__text Весна
+                            li
+                                label.checkbox
+                                    input#form_rectangle(type="checkbox", name="filter[seasons][]", value="Лето")
+                                    span.checkbox__elem
+                                    span.checkbox__text Лето
+                            li
+                                label.checkbox
+                                    input#form_circle(type="checkbox", name="filter[seasons][]", value="Осень")
+                                    span.checkbox__elem
+                                    span.checkbox__text Осень
+                            li
+                                label.checkbox
+                                    input#form_hexagon(type="checkbox", name="filter[seasons][]", value="Зима")
+                                    span.checkbox__elem
+                                    span.checkbox__text Зима
+                            li
+                                label.checkbox
+                                    input#form_triangle(type="checkbox", name="filter[seasons][]", value="Январь")
+                                    span.checkbox__elem
+                                    span.checkbox__text Январь
+                            li
+                                label.checkbox
+                                    input#form_hexagon(type="checkbox", name="filter[seasons][]", value="Февраль")
+                                    span.checkbox__elem
+                                    span.checkbox__text Февраль
+                            li
+                                label.checkbox
+                                    input#form_triangle(type="checkbox", name="filter[seasons][]", value="Март")
+                                    span.checkbox__elem
+                                    span.checkbox__text Март
+
+        .contentNavigation__menu_item
+            .contentNavigation__menu_item-title
+                span Регионы
+                +icon('ic_arrow-down')
+            .contentNavigation__menu_item-content
+                .filter-properties
+                    .filter-properties__list(data-filter="region")
+                        ul
+                            li
+                                label.checkbox
+                                    input#form_square(type="checkbox", name="filter[seasons][]", value="Москва")
+                                    span.checkbox__elem
+                                    span.checkbox__text Москва
+                            li
+                                label.checkbox
+                                    input#form_rectangle(type="checkbox", name="filter[seasons][]", value="Сочи")
+                                    span.checkbox__elem
+                                    span.checkbox__text Сочи
+                            li
+                                label.checkbox
+                                    input#form_circle(type="checkbox", name="filter[seasons][]", value="Екатеренбург")
+                                    span.checkbox__elem
+                                    span.checkbox__text Екатеренбург
+
+        .contentNavigation__menu_item
+            .contentNavigation__menu_item-title
+                span Отдых с детьми
+                +icon('ic_arrow-down')
+            .contentNavigation__menu_item-content
+                .filter-properties
+                    .filter-properties__list(data-filter="size")
+                        ul
+                            li
+                                label.checkbox
+                                    input#form_square(type="checkbox", name="filter[seasons][]", value="До 3 лет")
+                                    span.checkbox__elem
+                                    span.checkbox__text До 3 лет
+                            li
+                                label.checkbox
+                                    input#form_rectangle(type="checkbox", name="filter[seasons][]", value="До 7 лет")
+                                    span.checkbox__elem
+                                    span.checkbox__text До 7 лет
+                            li
+                                label.checkbox
+                                    input#form_circle(type="checkbox", name="filter[seasons][]", value="До 10 лет")
+                                    span.checkbox__elem
+                                    span.checkbox__text До 10 лет
+                            li
+                                label.checkbox
+                                    input#form_circle(type="checkbox", name="filter[seasons][]", value="До 12 лет")
+                                    span.checkbox__elem
+                                    span.checkbox__text До 12 лет
+                            li
+                                label.checkbox
+                                    input#form_circle(type="checkbox", name="filter[seasons][]", value="До 14 лет")
+                                    span.checkbox__elem
+                                    span.checkbox__text До 14 лет
+        .contentNavigation__menu_btn
+            .category-filter__clear.btn__white(data-filter="clear")
+                span Сбросить
+            button.btn__green(data-filter="apply")
+                span Показать 32 тура
+
+
+
+mixin contentNavigation
+    .contentNavigation
+
+
+        .contentNavigationBox
+            .contentNavigationBox__header
+                .contentNavigationBox__header_title Фильтры
+                .contentNavigationBox__header_close: +icon('ic_close')
+
+            +navigation-menu
+

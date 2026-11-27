@@ -1,0 +1,45 @@
+extends ../layouts/page
+
+block variables
+    include ../../data/data.pug
+    - const title = "INNA"
+
+
+block main
+
+    include ../../blocks/modules/categoryPage/category-banner/category-banner
+    include ../../blocks/modules/toursItem/toursItem-content
+    include ../../blocks/modules/toursItem/otherTours
+    include ../../blocks/components/messenger/messenger
+    include ../../blocks/components/breadcrumbs/breadcrumbs
+
+    .container.toursItemTop
+
+        +breadcrumbs([
+            {title: 'Все туры', href: '/'},
+            {title: 'Авторские туры', href: '/tours.html'},
+            {title: 'Архипелаг открытий'},
+        ])
+        h1 Байкальский лед: аэроходы и экскурсия на КБЖД
+        ul.toursItemTop__info
+            li
+                +icon('ic_city')
+                span Россия, Иркутск
+            li
+                span 9 дней / 8 ночей
+            li
+                span Ультра Все Вкл
+
+
+    +toursItem-content
+    +messenger
+    +category-banner
+    +otherTours
+
+
+
+
+
+
+block scripts
+    script(src="/js/index.js")

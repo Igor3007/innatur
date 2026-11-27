@@ -1,0 +1,16 @@
+extends ../layouts/page
+
+block variables
+    include ../../data/data.pug
+    - const title = "События ИННА ТУР"
+
+block main
+
+    include ../../blocks/modules/events-page/events-page
+    include ../../blocks/modules/social-banner/social-banner
+
+    +events-page
+    +social-banner-event
+
+block scripts
+    script(src="/js/index.js")

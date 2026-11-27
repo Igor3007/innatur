@@ -1,0 +1,20 @@
+include ../../components/breadcrumbs/breadcrumbs
+include event-hero
+include event-section
+include event-row
+include event-features
+
+mixin event-detail-page(data)
+    section.section-event-detail
+        .container
+            +breadcrumbs([
+                { title: 'События', href: '/events.html' },
+                { title: data.title },
+            ])
+
+        +event-hero(data)
+        +event-section(data.textBlock)
+        +event-row(data.rowBlock)
+        +event-section(data.listBlock)
+        +event-section(data.titleOnlyBlock)
+        +event-features(data.features)

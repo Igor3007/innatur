@@ -1,0 +1,64 @@
+
+mixin headerMenuMob
+    .MenuMobile
+
+.headerLine
+    .headerLine__link
+        ul
+            each item in headerLineLink
+                li: a(href=item.link)= item.text
+    .headerLine__info
+        a(href='mailto:agent@inna.ru').headerLine__info_mail agent@inna.ru
+        .headerLine__info_address Москва, пр-кт Мира, 95с1, 7 этаж, офисы 717, 719
+
+.headerMenu
+    .headerMenu__left
+        .headerMenu__logo
+            a(href='/'): +bgimage('/img/common/logo.svg')
+        ul.headerMenu__nav
+            li.info-action
+                .info-action__title
+                    span.name О компании
+                    i: +bgimage('/img/svg/ic_arrow-down.svg')
+                ul.dropdown
+                    li: a(href='#') Наша история
+                    li: a(href='#') О нас
+                    li: a(href='#') Команда
+                    li: a(href='#') Способы оплаты
+                    li: a(href='#') Контакты
+            li.info-action
+                .info-action__title
+                    span.name Корпоративным клиентам
+                    i: +bgimage('/img/svg/ic_arrow-down.svg')
+                ul.dropdown
+                    li: a(href='#') Технологии
+                    li: a(href='#') Договор
+                    li: a(href='#') Презентация
+                    li: a(href='#') Вход
+            li: a(href='#') Авиакомпаниям
+            li: a(href='#') Контакты
+    .headerMenu__right
+        .headerMenu__contact
+            .header-contact
+                .header-contact__title: a(href='tel:+7 (495) 742-12-12') +7 (495) 742-12-12
+                .header-contact__sub Туры
+            .header-contact
+                .header-contact__title: a(href='tel:+7 (495) 742-17-17') +7 (495) 742-17-17
+                .header-contact__sub Билеты
+        .headerMenu__msgr
+            ul
+                li: a(href='#'): +bgimage('/img/icons/type=vk.png')
+                li: a(href='#'): +bgimage('/img/icons/type=max.png')
+                li: a(href='#'): +bgimage('/img/icons/type=odnoklassniki.png')
+                li: a(href='#'): +bgimage('/img/icons/type=telegram.png')
+        .headerMenu__mobile
+            a(href='tel:+7 (495) 742-12-12').btn__mobile_phone
+                i: +bgimage('/img/svg/ic_phone.svg')
+            .openMobMenu
+                span.icon
+                    i
+                    i
+
++headerMenuMob
+
+

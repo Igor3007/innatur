@@ -1,0 +1,73 @@
+@use "../../../styles/vars" as vars;
+
+.event-section {
+    padding-block: 8px;
+
+    @include vars.from('md') {
+        padding-block: 12px;
+    }
+    @include vars.from('xxl') {
+        padding-top: 16px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px 16px;
+        background: var(--white);
+        border-radius: 16px;
+
+        @include vars.from('md') {
+            gap: 16px;
+            padding: 24px;
+        }
+
+        @include vars.from('xxl') {
+            padding: 32px;
+        }
+    }
+
+    &__title {
+        @include vars.font-h3;
+        color: var(--text-1);
+        margin: 0;
+    }
+
+    & .formated-text {
+        & ul {
+            padding-left: 0;
+            margin-top: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            & li {
+
+
+
+                @include vars.from('xl') {
+                    padding-left: 22px;
+                }
+                @include vars.from('xxl') {
+                    padding-bottom: 19px;
+                }
+
+                &:last-child {
+                    padding-bottom: 0
+                }
+            }
+        }
+    }
+
+    &__content {
+        @include vars.font-16;
+        color: var(--text-1);
+        margin: 0;
+
+
+    }
+
+
+}

@@ -1,0 +1,38 @@
+@use "../../../styles/vars" as vars;
+
+.minPriceBlock{
+    padding: 22px 0;
+    @media screen and (min-width: vars.$w760) {
+        padding: 52px 0;
+    }
+    &__title{
+        @include vars.font-h2;
+        padding-bottom: 14px;
+        @media screen and (min-width: vars.$w760) {}
+        @media screen and (min-width: vars.$w760) {
+            padding-bottom: 32px;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        position: relative;
+        .contentHere{
+            width: 100%;
+        }
+        @media screen and (min-width: vars.$w760) {
+            gap: 24px;
+            flex-direction: column;
+        }
+
+        .btn__all {
+            @media screen and (min-width: vars.$w760) {
+                position: absolute;
+                width: max-content;
+                bottom: calc(100% + 32px);
+                right: 0;
+            }
+        }
+    }
+}

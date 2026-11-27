@@ -1,0 +1,44 @@
+mixin card-category(data)
+     a(href='#').card-category
+        .card-category__title: =data.title
+        .card-category__row
+            .card-category__content
+                .card-category__content_desc= data.desc
+                .card-category__content_text
+                    span Подробнее
+                    +icon('ic_arr_round')
+            .card-category__icon: +icon(data.icon)
+
+
+mixin tile-category
+    section.section-tile-category
+        .container
+            .tile-category
+                .tile-category__head
+                    .tile-category__title: h2 Выберите подходящую вам категорию
+                    .tile-category__all
+                        a(href='#')
+                            span Смотреть все растения
+                            +icon('ic_arr_round')
+                .tile-category__list
+                    .tile-category__item
+                        +card-category({
+                            title: 'Хвойные растения',
+                            desc: 'Ель, кедр, кипарисовик, лиственница и др.',
+                            icon: 'ic_cat003',
+                        })
+                    .tile-category__item
+                        +card-category({
+                            title: 'Лиственные деревья',
+                            desc: 'Берёза, вяз, дуб, ива, карагана, клён и др.',
+                            icon: 'ic_cat001',
+                        })
+                    .tile-category__item
+                        +card-category({
+                            title: 'Декоративные кустарники',
+                            desc: 'Азалия, актинидия, барбарис, бересклет и др.',
+                            icon: 'ic_cat002',
+                        })
+
+                .tile-category__all
+                    a(href='#'): button.btn Смотреть все растения

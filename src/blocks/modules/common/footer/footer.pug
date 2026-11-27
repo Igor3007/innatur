@@ -1,0 +1,89 @@
+mixin footer-category(data)
+    .footer-category
+        .footer-category__head=data.head
+        .footer-category__list
+            ul
+                each item in data.list
+                    li: a(href='#')= item
+
+div(data-menu="container")
+
+    .footer
+        .container
+            .footerTop
+                .footer__contacts
+                    .footer__logo: a(href='#'): +bgimage('/img/common/logo.svg')
+                    .footer__contact
+                        .header-contact
+                            .header-contact__title: a(href='tel:+7 (495) 742-12-12') +7 (495) 742-12-12
+                            .header-contact__sub Туры
+                        .header-contact
+                            .header-contact__title: a(href='tel:+7 (495) 742-17-17') +7 (495) 742-17-17
+                            .header-contact__sub Билеты
+                    .footer__email: a(href='mailto:agent@inna.ru') agent@inna.ru
+                    .footer__address Москва, пр-кт Мира, 95с1, 7 этаж
+
+                    .footer__msgr
+                        ul
+                            li: a(href='#'): +bgimage('/img/icons/type=vk1.svg')
+                            li: a(href='#'): +bgimage('/img/icons/type=max1svg.svg')
+                            li: a(href='#'): +bgimage('/img/icons/type=ok1.svg')
+                            li: a(href='#'): +bgimage('/img/icons/type=telegram,1.svg')
+
+                .footer__catalog
+                    .footer__row
+                        .footer__col
+                            +footer-category({
+                                head: 'Путешествия',
+                                list: [
+                                    'Авторские туры',
+                                    'Подбор тура',
+                                    'Подбор отеля',
+                                    'Горящие туры',
+                                    'Авиабилеты',
+                                    'Минимальные цены',
+                                    'Визы',
+                                    'Страны',
+                                    'Календарь туров',
+                                ],
+                            })
+                        .footer__col
+                            +footer-category({
+                                head: 'О компании',
+                                list: [
+                                    'Наша история',
+                                    'О нас',
+                                    'Команда',
+                                    'Способы оплаты',
+                                    'Контакты',
+                                ],
+                            })
+                        .footer__col
+                            +footer-category({
+                                head: 'Корпоративным клиентам',
+                                list: [
+                                    'Технологии',
+                                    'Договор',
+                                    'Презентация',
+                                    'Вход',
+                                ],
+                            })
+                            +footer-category({
+                                head: 'Авиакомпаниям',
+                                list: [
+                                    'Предложение о сотрудничестве',
+                                ],
+                            })
+
+        .footer__bg
+            .container
+                .footer__text
+                    p Туристическая компания «ИННА ТУР» предлагает авторские, эксклюзивные туры и поездки по массовым туристическим направлениям. На сайте «Инны Тур» всегда актуальные и самые привлекательные предложения рынка, горящие путевки, огромный выбор отелей, круизов, путешествий на любой бюджет. Мы рады обеспечить туристов качественным сервисом и подобрать туры согласно вашему запросу.
+                    p Туроператор ООО «ИННА ТУР» — В031-00161-77/02092036
+                    p Турагент ООО «ИННА ТУР» — РТА 0050321
+                .footer__bottom
+                    .footer__copyright: span © 2026 Туристическая компания «ИННА ТУР». Все права защищены.
+                    .footer__policy
+                        a(href='#') Положение о персональных данных
+                        a(href='#') Положение о персональных данных
+

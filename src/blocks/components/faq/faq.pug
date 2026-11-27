@@ -1,0 +1,22 @@
+mixin faq(data)
+    .faq
+        each item, index in data
+            .faq__item
+                .faq-item
+                    .faq-item__question
+                        if item.info
+                            .faq-item__info= item.info
+                        .faq-item__title= item.title
+                        .faq-item__arrow
+                            +icon('ic_arrow-down', 26)
+                    .faq-item__answer
+                        p!= item.answer
+                        if item.slider && item.slider.length
+                            .faq__slider
+                                .splide(data-slider="toursSliderFAQ")
+                                    .splide__track
+                                        .splide__list
+                                            each url in item.slider
+                                                .splide__slide
+                                                    a(href=url, data-fslightbox=item.info)
+                                                        img(src=url, alt=item.title)

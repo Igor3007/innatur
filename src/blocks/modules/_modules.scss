@@ -1,0 +1,49 @@
+@forward "common/header/header";
+@forward "common/footer/footer";
+
+// @forward "common/main-menu/main-menu";
+
+@forward "about-company/about-company";
+@forward "first-block/first-block";
+@forward "form-order/form-order";
+@forward "popup-form/popup-form";
+@forward "seotext-block/seotext-block";
+@forward "stories-block/stories-block";
+@forward "team-block/team-block";
+@forward "tile-category/tile-category";
+
+
+
+@forward "categoryPage/category-info/category-info";
+@forward "categoryPage/category-content/category-content";
+@forward "categoryPage/contentNavigation/contentNavigation";
+@forward "categoryPage/contentSort/contentSort";
+@forward "categoryPage/category-FAQ/category-FAQ";
+@forward "categoryPage/category-banner/category-banner";
+
+@forward "minicard/minicard";
+
+
+
+@forward "history-block/history-block";
+@forward "burning-block/burning-block";
+@forward "special-block/special-block";
+@forward "minPrice-block/minPrice-block";
+@forward "AuthorTours-block/AuthorTours-block";
+@forward "about-block/about-block";
+@forward "info-block/info-block";
+@forward "social-banner/social-banner";
+
+@forward "toursItem/toursItem";
+@forward "toursItem/otherTours";
+
+@forward "../modules/events-page/events-page.scss";
+@forward "../modules/events-page/event-card.scss";
+@forward "../modules/events-page/events-filter.scss";
+
+@forward "../modules/event-detail/event-detail-page.scss";
+@forward "../modules/event-detail/event-features.scss";
+@forward "../modules/event-detail/event-hero.scss";
+@forward "../modules/event-detail/event-row.scss";
+@forward "../modules/event-detail/event-section.scss";
+@forward "../modules/popup-request//popup-request.scss";

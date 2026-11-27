@@ -1,0 +1,6 @@
+include ../../helpers/mixins.pug
+include ../../../blocks/modules/events-page/event-card.pug
+include ../../../data/data.pug
+
+each item in events.slice(0,3)
+    +event-card(item)

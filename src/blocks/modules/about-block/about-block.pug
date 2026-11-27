@@ -1,0 +1,96 @@
+
+mixin about-block
+    section.aboutBlock
+        .container
+            .aboutBlock__content
+                .aboutBlock__content_slider
+                    .aboutBlock__content_slider-title Отзывы о нас
+
+                    .aboutSlider
+                        .splide(data-slider="aboutUs")
+                            .splide__track
+                                .splide__list
+                                    .splide__slide
+                                        .aboutSlider__item
+                                            .aboutSlider__item_top
+                                                +picture('/img/aboutUs/avatar')
+                                                p Филимон Ковалев
+                                            .aboutSlider__item_rating
+                                                .stars
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                .time 8 мая
+                                            .aboutSlider__item_comment
+                                                .aboutSlider__item_comment-text Замечательные ребята! Профессионалы в своем деле! Любой вопрос по турам и отдыху, закроют максимально выгодно. На себе испытал! Рекомендую. 👍
+                                                a(href='/').aboutSlider__item_comment-btn
+                                                    span Читать далее
+                                                    i: +bgimage('/img/svg/ic_yandex.svg')
+                                    .splide__slide
+                                        .aboutSlider__item
+                                            .aboutSlider__item_top
+                                                +picture('/img/aboutUs/avatar1')
+                                                p гость
+                                            .aboutSlider__item_rating
+                                                .stars
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                .time 4 августа 2025
+                                            .aboutSlider__item_comment
+                                                .aboutSlider__item_comment-text Замечательные ребята! Профессионалы в своем деле! Любой вопрос по турам и отдыху, закроют максимально выгодно. На себе испытал! Рекомендую. 👍
+                                                a(href='/').aboutSlider__item_comment-btn
+                                                    span Читать далее
+                                                    i: +bgimage('/img/svg/ic_yandex.svg')
+                                    .splide__slide
+                                        .aboutSlider__item
+                                            .aboutSlider__item_top
+                                                +picture('/img/aboutUs/avatar1')
+                                                p гость
+                                            .aboutSlider__item_rating
+                                                .stars
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                .time 18 мая
+                                            .aboutSlider__item_comment
+                                                .aboutSlider__item_comment-text Несколько раз летали с семьей, пользуясь услугами этого турагентства. Турция и ОАЭ. Очень грамотные и терпеливые менеджеры, всегда оперативные и внимательные. Каждый раз мы находили такие варианты, которые были доступны по цене, удовлетворяли потребности всей семьи и оставляли прекрасные воспоминания об отдыхе. Также хотелось бы отметить удобное расположение офиса. Так что очень рекомендую Инна Тур всем, кто хочет качественного и беззаботного отдыха.
+                                                a(href='/').aboutSlider__item_comment-btn
+                                                    span Читать далее
+                                                    i: +bgimage('/img/svg/ic_yandex.svg')
+                                    .splide__slide
+                                        .aboutSlider__item
+                                            .aboutSlider__item_top
+                                                +picture('/img/aboutUs/avatar')
+                                                p Филимон Ковалев
+                                            .aboutSlider__item_rating
+                                                .stars
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                    +bgimage('/img/svg/ic_star-yandex.svg')
+                                                .time 24 августа 2026
+                                            .aboutSlider__item_comment
+                                                .aboutSlider__item_comment-text Замечательные ребята! Профессионалы в своем деле! Любой вопрос по турам и отдыху, закроют максимально выгодно. На себе испытал! Рекомендую. 👍
+                                                a(href='/').aboutSlider__item_comment-btn
+                                                    span Читать далее
+                                                    i: +bgimage('/img/svg/ic_yandex.svg')
+
+
+                .aboutBlock__content_rating
+                    .aboutBlock__content_rating-top
+                        .aboutBlock__content_rating-img: +bgimage('/img/aboutUs/logo-yandex.svg')
+                        .aboutBlock__content_rating-text Больше отзывов довольных клиентов читайте на Яндекс Картах!
+                    .aboutBlock__content_rating-info
+                        .rating
+                            .rating__text Средний рейтинг
+                            .rating__img: +bgimage('/img/svg/ic_star-yandex.svg')
+                            .rating__number 4.8
+                        .btn__green Смотреть все отызвы

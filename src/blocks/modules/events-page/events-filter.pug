@@ -1,0 +1,10 @@
+mixin events-filter(items)
+    .events-filter
+        .events-filter__list
+            each item in items
+                button.events-filter__item(
+                    type="button"
+                    class=(item.active ? 'active' : '')
+                    data-filter=item.value
+                )
+                    span= item.title

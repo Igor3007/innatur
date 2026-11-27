@@ -1,0 +1,344 @@
+@use "vars"as vars;
+
+.section-team-block {
+    background-color: var(--color-bg-02);
+    padding: 24px 0;
+
+    @media screen and (min-width: vars.$w769) {
+        padding: 50px 0;
+    }
+
+    &--list {
+
+        background-color: var(--color-bg-01);
+
+        & .team-block {
+            &__list {
+                display: flex;
+                flex-wrap: wrap;
+                margin: -6px;
+
+                @media screen and (min-width: vars.$w1440) {
+                    margin: -8px;
+                }
+            }
+
+            &__item {
+                padding: 6px;
+                width: 100%;
+
+                @media screen and (min-width: vars.$w1376) {
+                    width: 25%;
+                    padding: 8px;
+
+                }
+
+                @media screen and (min-width: vars.$w992) {
+                    width: 33.33%;
+                    padding: 8px;
+                }
+
+                @media screen and (min-width: vars.$w480) {
+                    width: 50%;
+                    padding: 8px;
+                }
+
+                & .card-member {
+                    &__main {
+                        padding: 16px;
+                    }
+
+                    &__name {
+                        padding-bottom: 8px;
+                    }
+
+                    &__desc {
+                        font-size: 14px;
+                        line-height: 150%;
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+    &--min {
+        & .team-block {
+            max-width: 900px;
+
+            @media screen and (min-width: vars.$w1376) {
+                max-width: 1050px;
+            }
+
+            &__title {
+                @include vars.font-h2;
+            }
+        }
+    }
+}
+
+.team-block {
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        @include vars.font-h2;
+        padding-bottom: 0.2em;
+    }
+
+    &__subtitle {
+        padding-bottom: 16px;
+        color: var(--accent-04);
+        @media screen and (min-width: vars.$w1440) {
+            padding-bottom: 32px;
+        }
+    }
+
+    &__list {
+        @media screen and (min-width: vars.$w480) {
+            padding-bottom: 34px;
+        }
+    }
+
+    &__bottom {
+        & .btn {
+
+            @media screen and (max-width: vars.$w769) {
+                width: 100%;
+            }
+            @media screen and (min-width: vars.$w1440) {
+                min-width: 343px;
+            }
+        }
+    }
+
+    &__nav {
+        display: none!important;
+        @include vars.splide-nav;
+        margin-left: auto;
+        .team-block__nav-prev,.team-block__nav-next{
+            &.is-hide{
+                opacity: 0.7;
+                box-shadow: none;
+                background-color: #D3DBE1;
+                cursor: default;
+                pointer-events: none;
+            }
+        }
+        & svg {
+            fill: var(--accent-02);
+        }
+
+        @media screen and (min-width: vars.$w769) {
+            display: flex!important;
+        }
+    }
+
+    & .splide {
+
+        display: flex;
+        flex-direction: column;
+
+        &__track {
+            margin-right: 0;
+            overflow: visible;
+
+            @media screen and (min-width: vars.$w576) {
+                margin-right: 0;
+            }
+        }
+
+        &__list {
+            height: auto;
+        }
+
+        &__arrows {
+            @media screen and (max-width: vars.$w760) {
+                order: 5;
+                display: flex;
+                justify-content: space-between;
+                height: auto;
+                padding-top: 24px;
+            }
+        }
+
+        &__arrow {
+
+            @media screen and (max-width: vars.$w760) {
+
+                width: 48px;
+                height: 48px;
+                background-color: var(--color-bg-03);
+                opacity: 1;
+                border-radius: 0;
+                transition: 0.3s ease;
+
+                &--next {
+                    position: static;
+                    transform: none;
+                }
+
+                &--prev {
+                    position: static;
+                    transform: none;
+                }
+            }
+
+            @media screen and (min-width: vars.$w760) {
+                width: 64px;
+                height: 64px;
+                background-color: var(--color-bg-03);
+                opacity: 1;
+                border-radius: 0;
+                transition: 0.3s ease;
+
+                &--next {
+                    right: -16px;
+                }
+
+                &--prev {
+                    left: -16px;
+                }
+            }
+
+            & svg {
+                fill: #fff;
+            }
+
+            &[disabled] {
+                @media screen and (min-width: vars.$w760) {
+                    opacity: 0;
+                }
+
+                opacity: 0.5;
+            }
+        }
+
+        &__pagination {
+            bottom: 13px;
+
+
+
+            &__page {
+
+                width: 16px;
+                height: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                border: 1px solid transparent;
+                border-radius: 0;
+
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    background-color: var(--color-borders-01);
+                    border-radius: 0;
+                }
+
+                &.is-active {
+                    transform: none;
+                    border: 1px solid var(--color-text-03);
+                }
+            }
+        }
+
+        &__slide {
+            @media screen and (min-width: vars.$w480) {
+                &:not(.is-visible) {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+}
+
+.card-member {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 20px 20px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-image: linear-gradient(0deg, rgba(239, 247, 230, 1) 0%, rgba(239, 247, 230, 0.1) 100%);
+    transition: 0.3s ease;
+    @media screen and (max-width: vars.$w480) {
+        margin-bottom: 16px;
+    }
+    @media screen and (min-width: vars.$w769) {
+        &:hover{
+            background-image: linear-gradient(0deg, rgba(228, 245, 208, 1) 0%, rgba(228, 245, 208, .1) 100%);
+            .card-member{
+                &__image {
+                    & picture {
+                        transform: translateY(-10px);
+                        &::before {
+                            border: 6px solid rgba(173, 235, 103, 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        max-width: 93%;
+        @media screen and (min-width: vars.$w480) {
+            max-width: 89%;
+        }
+        & picture {
+            @include vars.picture(149%, cover);
+            overflow: hidden;
+            transition: 0.3s ease;
+            &::before {
+                transition: 0.3s ease;
+                content: '';
+                @include vars.layer(3);
+                border: 6px solid rgba(173, 235, 103, 0.3);
+                border-radius: 20px;
+            }
+            & img {
+                border-radius: 20px;
+                display: block;
+                overflow: hidden;
+            }
+        }
+    }
+
+    &__main {
+        padding: 15px 0 0;
+        background-color: var(--color-bg-01);
+        flex-grow: 1
+    }
+
+    &__name {
+        @include vars.font-20;
+        color: var(--accent-02);
+    }
+
+    &__desc {
+        color: var(--accent-04);
+        font-size: 14px;
+        padding-bottom: 10px
+    }
+
+    &__phone {
+        @include vars.font-18;
+        color: var(--accent-03);
+    }
+
+    &__email {
+        @include vars.font-16;
+        color: var(--accent-02);
+        font-weight: 600;
+    }
+}

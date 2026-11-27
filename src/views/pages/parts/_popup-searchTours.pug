@@ -1,0 +1,44 @@
+include ../../helpers/mixins.pug
+
+.popup-form.w640
+    .popup-form__wrp
+        .popup-form__title Подберём тур специально для вас
+        .popup-form__desc Наши менеджеры бесплатно помогут вам определиться с туром и подберут лучшие варианты для вашего отдыха!
+        .popup-form__form
+            form(action="/action.php")
+                .form
+                    .form__item
+                        .form__subitem
+                            //label Имя
+                            input(type="text" maxlength="25" name="" required placeholder="Имя")
+                    .form__item
+                        .form__subitem
+                            //label Номер телефона:
+                            input(type="text" maxlength="25" data-maska="+7(###)###-##-##" name="" required placeholder="Номер телефона")
+                    .form__item
+                        .form__subitem
+                            //label E-mail (необязательно)
+                            input(type="email" maxlength="90" placeholder="E-mail (необязательно)")
+
+                    .form__item
+                        .form__subitem
+                            //label Удобное время связи:
+                            input(type="text" maxlength="25" name="" placeholder="Удобное время связи")
+                    .form__item
+                        .form__subitem
+                            //label Комментарий (необязательно)
+                            textarea(name="" maxlength="500" placeholder="Комментарий (необязательно)")
+
+
+                    .form__item
+                        .form__subitem.form__subitem--submit
+                            button.btn__green(style="margin-top: 12px;")(type="submit")
+                                span Отправить заявку
+
+                    .form__item
+                        .form__subitem
+                            .form__note
+                                p Отправляя форму, вы соглашаетесь с условиями <a href="/policy.html"> публичной оферты</a> и выражаете свое согласие на обработку <a href="/policy.html">персональных данных</a>.
+
+                                //+checkbox('Нажимая на кнопку «Отправить заявку», я соглашаюсь с <a href="/policy.html">Политикой конфиденциальности</a>', 'policy', {required: true})
+

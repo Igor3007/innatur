@@ -1,0 +1,137 @@
+@use "../../../styles/vars" as vars;
+
+.otherTours{
+    padding-bottom: 44px;
+    @media screen and (min-width: vars.$w760) {
+        padding-bottom: 104px;
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        @media screen and (max-width: vars.$w760) {
+
+            .otherSlider{
+                .splide{
+                    margin-left: -16px;
+                    margin-right: -16px;
+                }
+
+            }
+        }
+        &_slider{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            //@media screen and (min-width: vars.$w1200) {
+            //    width: calc(((100% / 3) * 2) - 8px);
+            //}
+            &-title{
+                @include vars.font-h2;
+                padding-bottom: 32px;
+                @media screen and (max-width: vars.$w760) {
+                    padding-bottom: 8px;
+                }
+            }
+
+            .otherSlider{
+                .splide__pagination{
+                    padding: 12px 0 0;
+                    &__page{
+                        width: 4px;
+                        height: 3px;
+                        background: #E8E9EB;
+                        border-radius: 3px;
+                        margin: 0 2px;
+                        &.is-active{
+                            transform: scale(1);
+                            width: 32px;
+                            background: #75AD1F;
+                        }
+                    }
+                }
+                @media screen and (max-width: vars.$w760) {
+                    .splide__track{
+                        padding: 0 16px!important;
+                    }
+                }
+                .splide__arrow--prev svg ,
+                .splide__arrow--next svg {
+                    display: none;
+                }
+                .splide__arrow--prev,
+                .splide__arrow--next {
+                    @media screen and (min-width: vars.$w760) {
+                        &:hover{
+                            background: var(--bg-02);
+                        }
+                    }
+                }
+                .splide__arrow:disabled{
+                    opacity: 0.3;
+                    &:hover{
+                        background: transparent!important;
+                    }
+                }
+
+                /* Или полностью заменить содержимое */
+                .splide__arrow--prev .splide__arrow__svg {
+                    display: none;
+                }
+
+                .splide__arrow--prev::after {
+                    content: '';
+                    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxNiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDVMNSAxMEwxMCAxNSIgc3Ryb2tlPSIjMjAyMTI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==");
+                    width: 18px;
+                    height: 22px;
+                    background-size: contain;
+                }
+
+                .splide__arrow--next::after {
+                    content: '';
+                    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxNiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYgMTVMMTEgMTBMNiA1IiBzdHJva2U9IiMyMDIxMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4=");
+                    width: 18px;
+                    height: 22px;
+                    background-size: contain;
+                }
+                .splide__arrows{
+                    display: flex;
+                    align-items: center;
+                    position: absolute;
+                    right: 0;
+                    gap: 8px;
+                    bottom: calc(100% + 24px);
+                    //border-radius: 12px;
+                    //border: 1px solid #E8E9EB ;
+                    //overflow: hidden;
+                    .splide__arrow--prev{
+                        //border-right: 1px solid #E8E9EB ;
+                    }
+                    .splide__arrow{
+                        left: inherit!important;
+                        right: inherit!important;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        top: inherit!important;
+                        transform: inherit;
+                        height: 44px;
+                        width: 44px;
+                        background: #FFFFFF;
+                        border-radius: 6px
+                    }
+                }
+                @media screen and (max-width: vars.$w760) {
+                    .splide__list{
+                        display: flex!important;
+                        gap: 12px;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+.btn__white{
+    margin-top: 16px;
+}
+    }
+}

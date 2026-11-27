@@ -1,0 +1,181 @@
+include ../../categoryPage/contentNavigation/contentNavigation
+include ../../categoryPage/contentSort/contentSort
+include ../../minicard/minicard
+include ../../../components/pagination/pagination
+
+-
+    const bestOffers = [
+        {
+            image: '/img/objects/img-0',
+            rating: '4.5',
+            ratingBg: '#75AD1F',
+            city: 'Турция, Сиде',
+            title: '5* throne beach resort & spa (ex. nilbahir resort & spa)',
+            info1: '18 июл 6 дн',
+            info2: '2 чел.',
+            info3: 'Ультра Все Вкл',
+            props: [
+                {label: '18 июл 6 дн'},
+                {label: '2 чел.'},
+                {label: 'Ультра Все Вкл'}
+            ],
+            link: '/',
+            priceCurrent: '111 520 ₽',
+
+        },
+        {
+            image: '/img/objects/img-1',
+            rating: '3.5',
+            ratingBg: '#f6900b',
+            city: 'Турция, Сиде',
+            title: '5* throne beach resort & spa (ex. nilbahir resort & spa)',
+            info1: '18 июл 6 дн',
+            info2: '2 чел.',
+            info3: 'Ультра Все Вкл',
+            props: [
+                {label: '18 июл 6 дн'},
+                {label: '2 чел.'},
+                {label: 'Ультра Все Вкл'}
+            ],
+            link: '/',
+            priceCurrent: '57 044 ₽',
+            priceOld: '77 044 ₽',
+            sale: '22%',
+        },
+        {
+            image: '/img/objects/img-2',
+            rating: '2.5',
+            ratingBg: '#f30202',
+            city: 'Турция, Сиде',
+            title: '5* throne beach resort & spa (ex. nilbahir resort & spa)',
+            info1: '18 июл 6 дн',
+            info2: '2 чел.',
+            info3: 'Ультра Все Вкл',
+            props: [
+                {label: '18 июл 6 дн'},
+                {label: '2 чел.'},
+                {label: 'Ультра Все Вкл'}
+            ],
+            link: '/',
+            priceCurrent: '57 044 ₽',
+            priceOld: '77 044 ₽',
+            sale: '22%',
+        },
+        {
+            image: '/img/objects/img-3',
+            rating: '4.5',
+            ratingBg: '#75AD1F',
+            city: 'Турция, Сиде',
+            title: '5* throne beach resort & spa (ex. nilbahir resort & spa)',
+            info1: '18 июл 6 дн',
+            info2: '2 чел.',
+            info3: 'Ультра Все Вкл',
+            props: [
+                {label: '18 июл 6 дн'},
+                {label: '2 чел.'},
+                {label: 'Ультра Все Вкл'}
+            ],
+            link: '/',
+            priceCurrent: '57 044 ₽',
+            priceOld: '77 044 ₽',
+            sale: '22%',
+        },
+        {
+            image: '/img/objects/img-0',
+            rating: '4.5',
+            ratingBg: '#75AD1F',
+            city: 'Турция, Сиде',
+            title: '5* throne beach resort & spa (ex. nilbahir resort & spa)',
+            info1: '18 июл 6 дн',
+            info2: '2 чел.',
+            info3: 'Ультра Все Вкл',
+            props: [
+                {label: '18 июл 6 дн'},
+                {label: '2 чел.'},
+                {label: 'Ультра Все Вкл'}
+            ],
+            link: '/',
+            priceCurrent: '57 044 ₽',
+
+        },
+        {
+            image: '/img/objects/img-1',
+            rating: '3.5',
+            ratingBg: '#f6900b',
+            city: 'Турция, Сиде',
+            title: '5* throne beach resort & spa (ex. nilbahir resort & spa)',
+            info1: '18 июл 6 дн',
+            info2: '2 чел.',
+            info3: 'Ультра Все Вкл',
+            props: [
+                {label: '18 июл 6 дн'},
+                {label: '2 чел.'},
+                {label: 'Ультра Все Вкл'}
+            ],
+            link: '/',
+            priceCurrent: '57 044 ₽',
+            priceOld: '77 044 ₽',
+            sale: '22%',
+        },
+        {
+            image: '/img/objects/img-2',
+            rating: '2.5',
+            ratingBg: '#f30202',
+            city: 'Турция, Сиде',
+            title: '5* throne beach resort & spa (ex. nilbahir resort & spa)',
+            info1: '18 июл 6 дн',
+            info2: '2 чел.',
+            info3: 'Ультра Все Вкл',
+            props: [
+                {label: '18 июл 6 дн'},
+                {label: '2 чел.'},
+                {label: 'Ультра Все Вкл'}
+            ],
+            link: '/',
+            priceCurrent: '57 044 ₽',
+            priceOld: '77 044 ₽',
+            sale: '22%',
+        },
+        {
+            image: '/img/objects/img-3',
+            rating: '4.5',
+            ratingBg: '#75AD1F',
+            city: 'Турция, Сиде',
+            title: '5* throne beach resort & spa (ex. nilbahir resort & spa)',
+            info1: '18 июл 6 дн',
+            info2: '2 чел.',
+            info3: 'Ультра Все Вкл',
+            props: [
+                {label: '18 июл 6 дн'},
+                {label: '2 чел.'},
+                {label: 'Ультра Все Вкл'}
+            ],
+            link: '/',
+            priceCurrent: '57 044 ₽',
+            priceOld: '77 044 ₽',
+            sale: '22%',
+        },
+
+    ]
+
+mixin category-content
+    section.sectionCategoryContent
+        .container
+            .contentMainSort
+                .contentMainSort__number Найдено
+                    span 48 туров
+                .contentMainSort__right
+                    +contentSort
+                    .btn__white.openMobileCategory
+                        +icon('ic_filters')
+
+            .container__body
+                +contentNavigation
+                .contentMain
+                    .contentMainItems
+
+                        each item in bestOffers
+                            +minicard(item)
+
+                    +pagination-showmore
+

@@ -1,0 +1,137 @@
+@use "../../../../styles/vars" as vars;
+
+
+.sectionCategoryContent{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    overflow: visible;
+    @media screen and (min-width: vars.$w1024) {
+        padding-bottom: 96px;
+    }
+    .container__body{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 6px;
+        @media screen and (min-width: vars.$w1024) {
+            flex-direction: row;
+            gap: 24px;
+            padding-top: 0;
+        }
+    }
+    .contentMain{
+        width: 100%;
+        @media screen and (min-width: vars.$w1024) {
+            width: calc(100% - 352px);
+        }
+    }
+
+    .contentMainSort{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 4px;
+        @media screen and (max-width: vars.$w760) {
+            justify-content: flex-end;
+        }
+        &__right{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+            @media screen and (max-width: vars.$w1024) {
+               .contentSort__select{
+                   display: flex;
+                   flex-direction: column;
+                   align-items: flex-end;
+                   .custom-select-trigger {
+                       line-height: 0;
+                       font-size: 0;
+                       width: 44px;
+                       height: 44px;
+                       border-radius: 6px;
+                       padding: 12px;
+                       background: var(--white);
+                       display: flex;
+                       align-items: center;
+                       justify-content: center;
+
+                       &:before {
+                           display: none;
+                       }
+
+                       &:after {
+                           content: "";
+                           position: absolute;
+                           top: calc(50% - 10px);
+                           right: 12px;
+                           width: 16px;
+                           height: 20px;
+                           background-size: 16px;
+                           background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxNiAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik03LjIyMjIyIDcuNDI4NTdMNC4xMTExMSA0TDEgNy40Mjg1N000LjExMTExIDRWMTZNOC43Nzc3OCAxMi41NzE0TDExLjg4ODkgMTZMMTUgMTIuNTcxNE0xMS44ODg5IDE2VjQiIHN0cm9rZT0iIzIyMjMyNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=");
+                           background-repeat: no-repeat;
+
+                       }
+                   }
+               }
+            }
+            .openMobileCategory{
+                width: 44px;
+                height: 44px;
+                border-radius: 6px;
+                padding: 12px;
+            }
+        }
+        @media screen and (min-width: vars.$w1024) {
+            .openMobileCategory{
+                display: none;
+            }
+        }
+        @media screen and (max-width: vars.$w1024) {
+            padding-bottom: 6px;
+            padding-top: 6px;
+            height: 56px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #F2F4F7;
+            z-index: 2;
+        }
+
+        &__number{
+            @include vars.font-14;
+            font-weight: 400;
+            color: var(--text-1);
+            span{
+                padding-left: 8px;
+                color: var(--text-1);
+            }
+            @media screen and (min-width: vars.$w1024) {
+                @include vars.font-15;
+                position: relative;
+            }
+            @media screen and (max-width: vars.$w760) {
+                position: absolute;
+                left: 0;
+                top: 18px;
+            }
+        }
+    }
+    .contentMainItems{
+        .section-stories-block{
+            overflow: visible;
+        }
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 12px;
+
+        @media screen and (min-width: vars.$w760) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+
+        }
+    }
+}

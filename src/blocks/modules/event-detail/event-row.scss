@@ -1,0 +1,113 @@
+@use "../../../styles/vars" as vars;
+
+.event-row {
+    padding-block: 8px;
+
+    @include vars.from('md') {
+        padding-block: 12px;
+    }
+    @include vars.from('xxl') {
+        padding-block: 22px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 16px;
+        padding: 16px;
+        background: var(--white);
+        border-radius: 16px;
+
+        @include vars.from('lg') {
+            flex-direction: row;
+            gap: 32px;
+            padding: 24px;
+            align-items: stretch;
+        }
+
+        @include vars.from('xxl') {
+            padding: 32px;
+        }
+    }
+
+    &--reverse &__card {
+        @include vars.from('lg') {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        @include vars.from('lg') {
+            flex: 1 1 50%;
+            gap: 16px;
+        }
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        color: var(--text-2);
+        @include vars.font-14;
+    }
+
+    &__meta-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        svg {
+            flex-shrink: 0;
+            fill: currentColor;
+            opacity: 0.7;
+        }
+    }
+
+    &__title {
+        @include vars.font-h3;
+        color: var(--text-1);
+        margin: 0;
+    }
+
+    &__desc {
+        @include vars.font-16;
+        color: var(--text-1);
+        margin: 0;
+
+        
+    }
+
+    &__action {
+        margin-top: auto;
+
+        .btn__green {
+            width: 100%;
+            @include vars.from('md') {
+                width: auto;
+                min-width: 220px;
+            }
+        }
+    }
+
+    &__media {
+        @include vars.from('lg') {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @include vars.from('xxl') {
+            flex: 0 0 57%;
+            max-width: 57%;
+        }
+
+        & picture {
+            @include vars.picture(56.25%, cover);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #eee;
+        }
+    }
+}

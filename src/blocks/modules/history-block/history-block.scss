@@ -1,0 +1,17 @@
+@use "../../../styles/vars" as vars;
+
+
+.historyBlock{
+    padding: 22px 0;
+    @media screen and (min-width: vars.$w760) {
+        padding: 32px 0 52px;
+    }
+    &__title{
+        @include vars.font-h3;
+        padding-bottom: 14px;
+        @media screen and (min-width: vars.$w760) {}
+        @media screen and (min-width: vars.$w760) {
+            padding-bottom: 16px;
+        }
+    }
+}

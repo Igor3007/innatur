@@ -1,0 +1,18 @@
+mixin event-card(item)
+    a.event-card(
+        href="/event-detail.html"
+        class=(item.wide ? 'event-card--wide' : '')
+    )
+        .event-card__preview
+            +picture(item.image)
+            .event-card__overlay
+                span Узнать подробнее
+        .event-card__body
+            .event-card__title= item.title
+            .event-card__meta
+                .event-card__meta-item
+                    +icon('ic_marker', 20)
+                    span= item.country + ', ' + item.city
+                .event-card__meta-item
+                    +icon('ic_calendar', 20)
+                    span= item.date

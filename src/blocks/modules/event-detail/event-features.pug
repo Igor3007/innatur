@@ -1,0 +1,48 @@
+include ../../../views/helpers/mixins.pug
+
+//- Карточка преимущества (адаптировано из .infoBlock__content_info-items .item)
+mixin event-feature-item(item, idx)
+    button.event-features__item(
+        type="button"
+        class=(idx === 0 ? 'active' : '')
+        data-feature-id=item.id
+    )
+        .event-features__item-title= item.label
+        .event-features__item-text= item.subtitle
+        .event-features__item-icon
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L17 9L9 17M17 9L1 9" stroke="#75AD1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+mixin event-features(data)
+    section.event-features(data-features)
+        .container
+            .event-features__wrp
+
+                .event-features__grid
+
+                    //- Левая колонка: карточки
+                    .event-features__list
+                        h3.event-features__title= data.title
+                        each item, idx in data.items
+                            +event-feature-item(item, idx)
+
+                    //- Панель контента: справа на десктопе, под списком на мобилке
+                    .event-features__panel
+                        each item, idx in data.items
+                            .event-features__panel-item(
+                                class=(idx === 0 ? 'active' : '')
+                                data-feature-panel=item.id
+                            )
+                                if item.type === 'image' && item.image
+                                    .event-features__panel-media
+                                        +picture(item.image)
+                                else if item.type === 'text'
+                                    .event-features__text-panel
+                                        .formated-text
+                                            if item.textTitle
+                                                h4= item.textTitle
+                                            if item.listItems && item.listItems.length
+                                                ul
+                                                    each li in item.listItems
+                                                        li= li
+                                            if item.textContent
+                                                p= item.textContent

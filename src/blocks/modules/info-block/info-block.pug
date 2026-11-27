@@ -1,0 +1,47 @@
+mixin item(data)
+    a(href=data.href).item
+        .item__title= data.title
+        .item__text= data.text
+        .item__icon: <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 1L17 9L9 17M17 9L1 9" stroke="#75AD1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+
+mixin info-block
+    section.infoBlock
+        .container
+            .infoBlock__content
+                .infoBlock__content_history
+                    .infoBlock__content_history-top
+                        .infoBlock__content_history-title Немного истории
+                        ul
+                            li 34 года на рынке туризма и путешествий
+                            li Лучшие цены и индивидуальный подход к каждому клиенту: мы стараемся держать цены приемлемыми, насколько это возможно
+                            li Более 5000 постоянных клиентов доверяют нам
+                            li Быстрый и безопасный поиск туров по 80 туроператорам: найдите любой тур за пару минут по вашим параметрам!
+                    .btn__green
+                        span Подробнее о компании
+                        i: +bgimage('/img/svg/ic_arr-right-white.svg')
+
+
+                .infoBlock__content_info
+                    .infoBlock__content_info-title Почему выбирают ИННА ТУР
+                    .infoBlock__content_info-items
+                        +item({
+                            href: '/',
+                            title: 'Оплата позже',
+                            text: 'Зафиксируйте цену билета, а выкупите потом',
+                        })
+                        +item({
+                            href: '/',
+                            title: 'Поддержка 24/7',
+                            text: 'Всегда на связи и рады вам помочь',
+                        })
+                        +item({
+                            href: '/',
+                            title: 'Подписка на цену',
+                            text: 'Наш бот сообщит, если билет станет дешевле',
+                        })
+                        +item({
+                            href: '/',
+                            title: '100% возврат',
+                            text: 'С услугой сможете вернуть всю стоимость',
+                        })

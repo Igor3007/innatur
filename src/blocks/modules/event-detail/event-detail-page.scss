@@ -1,0 +1,17 @@
+@use "../../../styles/vars" as vars;
+
+.section-event-detail {
+    padding-bottom: 48px;
+
+    @include vars.from('md') {
+        padding-bottom: 96px;
+    }
+
+    .breadcrumbs {
+        margin-block: 16px 20px;
+
+        @include vars.from('md') {
+            margin-block: 24px 28px;
+        }
+    }
+}

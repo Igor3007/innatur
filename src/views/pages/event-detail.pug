@@ -1,0 +1,14 @@
+extends ../layouts/page
+
+block variables
+    include ../../data/data.pug
+    - const title = "Финал Лиги чемпионов и автопробег на спорткарах"
+
+block main
+
+    include ../../blocks/modules/event-detail/event-detail-page.pug
+
+    +event-detail-page(eventDetail)
+
+block scripts
+    script(src="/js/index.js")
